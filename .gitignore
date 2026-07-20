@@ -1,12 +1,16 @@
 .idea/
-.bsp/
-.metals/
 .vscode/
+.bsp/
 
+.venv/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
 target/
-project/target/
 project/project/
+project/target/
 
-*.class
+*.py[cod]
 *.log
 .DS_Store
+.env
