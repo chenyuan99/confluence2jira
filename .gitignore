@@ -1,14 +1,9 @@
 .idea/
 .vscode/
-.bsp/
-
 .venv/
 .pytest_cache/
 .ruff_cache/
 __pycache__/
-target/
-project/project/
-project/target/
 
 *.py[cod]
 *.log

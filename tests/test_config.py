@@ -2,7 +2,6 @@ import pytest
 
 from confluence2jira.config import Settings
 
-
 ENVIRONMENT = {
     "CONFLUENCE_URL": " https://confluence.example.com ",
     "CONFLUENCE_USERNAME": " confluence-user ",
@@ -48,5 +47,7 @@ def test_settings_treats_whitespace_only_value_as_missing(
         monkeypatch.setenv(name, value)
     monkeypatch.setenv("JIRA_PROJECT_KEY", "   ")
 
-    with pytest.raises(ValueError, match=r"Missing required environment variables: JIRA_PROJECT_KEY"):
+    with pytest.raises(
+        ValueError, match=r"Missing required environment variables: JIRA_PROJECT_KEY"
+    ):
         Settings.from_env()

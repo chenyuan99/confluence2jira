@@ -25,9 +25,7 @@ class Migrator:
         )
 
     def get_page(self, page_id: str) -> ConfluencePage:
-        raw: dict[str, Any] = self.confluence.get_page_by_id(
-            page_id, expand="body.storage,_links"
-        )
+        raw: dict[str, Any] = self.confluence.get_page_by_id(page_id, expand="body.storage,_links")
         links = raw.get("_links", {})
         web_ui = links.get("webui")
         url = f"{self.settings.confluence_url.rstrip('/')}{web_ui}" if web_ui else None
